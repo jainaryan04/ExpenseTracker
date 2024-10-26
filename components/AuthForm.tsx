@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-
+import ThemeToggle from "@/components/ThemeToggle"
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -92,15 +92,15 @@ const AuthForm = ({ type }: { type: string }) => {
             height={34}
             alt="Horizon logo"
           />
-          <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">
+          <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1 dark:text-white">
             Horizon
           </h1>
         </Link>
 
         <div className="flex flex-col gap-1 md:gap-3">
-          <h1 className="text-24 lg:text-36 font-semibold text-gray-900">
+          <h1 className="text-24 lg:text-36 font-semibold text-gray-900 dark:text-gray-200">
             {user ? "Link Account" : type === "sign-in" ? "Sign In" : "Sign Up"}
-            <p className="text-16 font-normal text-gray-600">
+            <p className="text-16 font-normal text-gray-600 dark:text-gray-300">
               {user
                 ? "Link your account to get started"
                 : "Please enter your details"}
@@ -207,7 +207,7 @@ const AuthForm = ({ type }: { type: string }) => {
           </Form>
 
           <footer className="flex justify-center gap-1">
-            <p className="text-14 font-normal text-gray-600">
+            <p className="text-14 font-normal text-gray-600 dark:text-gray-300">
               {type === "sign-in"
                 ? "Don't have an account?"
                 : "Already have an account?"}
@@ -221,6 +221,7 @@ const AuthForm = ({ type }: { type: string }) => {
           </footer>
         </>
       )}
+      <ThemeToggle />
     </section>
   );
 };

@@ -380,3 +380,7 @@
     @apply text-16 font-semibold text-black-2 max-xl:hidden;
   }
 }
+
+body{
+  @apply dark:bg-black-2 dark:text-white;
+}
